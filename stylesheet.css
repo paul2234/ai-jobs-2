@@ -1,0 +1,113 @@
+body, h1, h2, h3, p {
+	margin: 0;
+	padding: 0;
+}
+
+#hero {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: url('assets/Stocksy_unlicensed_comp_watermarked_332072.jpg') center/cover no-repeat;
+	/*background: url('assets/Stocksy_unlicensed_comp_watermarked_5611513.jpg') center/cover no-repeat;*/
+	padding: 2em;
+	box-sizing: border-box;
+}
+
+#hero h1 {
+	color: white;
+	font-size: 3em;
+
+}
+
+#hero-content {
+	max-width: 800px;
+}
+
+#main {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 10px;
+	min-height: 100vh;
+	box-sizing: border-box;
+}
+
+.project-card {
+	/*shape & border*/
+	border: 1px solid #ccc;
+	padding: 10px;
+	border-radius: 10px;
+
+	/*layout*/
+	display: flex;
+	flex-direction: column;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.project-header h3 {
+	margin-bottom: 0px;
+}
+
+.project-header p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+
+.project-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.project-tag {
+	padding: 10px;
+	background-color: #ccc;
+	border-radius: 999px;
+}
+
+.job-tiles {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.job-tile {
+	
+	/*size and layout*/
+	border-radius: 10px;
+	height: 100px;
+
+	@media only screen and (max-width: 600px) { 
+		flex: 1;
+	}
+	@media only screen and (min-width: 601px) { 
+		width: 100px;	
+	}
+
+	/*display*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+}
+
+.electrician {
+	background-color: #74b9ff;
+	color: #0984e3;
+}
+
+.hvac {
+	background-color: #55efc4;
+	color: #00b894;
+}
+
+.plumbing {
+	background-color: #a29bfe;
+	color: #6c5ce7;
+}
