@@ -52,9 +52,10 @@ const Home = () => /*html*/`
 		</div>
 	</div>
 	<div id = "main">
-		<h2>Hello World!</h2>
+		<h2>AI Creates over 175,000 Skilled Trade Jobs Each Year.</h2>
+		<h2>Find Yours Here.</h2>
 		<div id = "content">
-			<p>Lorem ipsum dolor sit amet.</p>
+			<p class = 'content-intro'>America is in a race to win AI. Winning this race will require massive infrastructure investments. Companies are investing heavily, creating numerous job openings for skilled trades in the process. Find projects near you. Get connected with valuable training resources. Get hired into stable, high-paying jobs. All in one place.</p>
 			<div id = "projects"></div>
 		</div>
 		<template id = 'project-template'>
