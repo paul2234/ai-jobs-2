@@ -8,6 +8,12 @@ const routes = {
 	"/email": { title: "Email", render: Email, onRender: onEmailRender}
 }
 
+export function navigateTo(url) {
+	console.log('url',url);
+  history.pushState(null, null, url);
+  router();
+}
+
 // define router
 export default function router() {
 	

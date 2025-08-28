@@ -1,5 +1,5 @@
 
-import router from '../components/router.js';
+import {navigateTo} from '../components/router.js';
 
 const data = [
   {projectName:"Google Project",company:"Google",type:"Data Center",location:"Baton Rouge, LA",timeline:"2026 - 2029",jobs:[{role:"Electricians",count:200},{role:"HVAC",count:100}]},
@@ -17,12 +17,6 @@ function createProjectCard(project) {
   card.querySelector('.timeline').textContent = project.timeline;
 
   return card;
-}
-
-function navigateTo(url) {
-	console.log('url',url);
-  history.pushState(null, null, url);
-  router();
 }
 
 export function onHomeRender() {
@@ -44,11 +38,18 @@ export function onHomeRender() {
 }
 
 const Home = () => /*html*/`
-    <div id = "hero">
-			<div id = "hero-content">
-				<h1>Find Skilled Trade Jobs on AI Projects Near You</h1>
-				<button id='seeMore'>See Jobs</button>
-			</div>
+  <div id = "hero">
+  	<div id = 'hero-nav'>
+  		<img src="assets/vf_logo.svg" id='hero-image'>
+  		<div id ='hero-company-name'>
+  			<p id = 'hero-bold'>Future Jobs</p>
+  			<p id = 'hero-small'>by Virtus Foundry</p>
+  		</div>
+  	</div>
+		<div id = "hero-content">
+			<h1>Find Skilled Trade Jobs on AI Projects Near You</h1>
+			<button id='seeMore'>See Jobs</button>
+		</div>
 	</div>
 	<div id = "main">
 		<h2>Hello World!</h2>
