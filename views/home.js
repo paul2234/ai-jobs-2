@@ -1,5 +1,6 @@
 
 import {navigateTo} from '../components/router.js';
+import supabase from '../components/supabase.js';
 
 const data = [
   {projectName:"Google Project",company:"Google",type:"Data Center",location:"Baton Rouge, LA",timeline:"2026 - 2029",jobs:[{role:"Electricians",count:200},{role:"HVAC",count:100},{role:"Plumbing",count:100}]},
@@ -27,6 +28,30 @@ function createProjectCard(project) {
   return card;
 }
 
+async function handleclick(e) {
+	e.preventDefault();
+	
+	try {
+		if (supabase) {
+			const sessionId = Math.floor(Math.random() * 2147483647);
+			const data = {
+          project: 'ai_jobs',
+          event_description: 'clicked_see_more',
+          created_at: new Date().toISOString(),
+          session_id: sessionId,
+      }
+			// const response = await supabase.from('events').insert(data);
+		} else {
+			console.log("Supabase not initialized. No request sent");
+		}
+	} catch (error) {
+		console.error('Error logging event:', error);
+	} finally {
+		navigateTo('/email');	
+	}
+
+}
+
 export function onHomeRender() {
 	if (window.location.pathname === "/") {
   		const container = document.getElementById("projects");
@@ -39,9 +64,8 @@ export function onHomeRender() {
 		});
 
 		document.getElementById('projects').addEventListener('click', (e) => {
-			e.preventDefault();
-			navigateTo('/email');
-		})
+				handleclick(e);
+			})
   	}
 }
 

@@ -63,6 +63,10 @@ body, h1, h3, p {
 	font-size: 4em;
 	margin-bottom: 50px;
 
+	@media screen and (max-width: 760px) {
+		font-size: 2.5em;
+	}
+
 }
 
 #hero-content {
@@ -173,18 +177,3 @@ body, h1, h3, p {
 .role-icon {
 	font-size: 1.3em;
 }
-
-/*.electrician {
-	background-color: #74b9ff;
-	color: #0984e3;
-}
-
-.hvac {
-	background-color: #55efc4;
-	color: #00b894;
-}
-
-.plumbing {
-	background-color: #a29bfe;
-	color: #6c5ce7;
-}*/
