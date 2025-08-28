@@ -1,5 +1,5 @@
 
-import router from './router.js';
+import router from '../components/router.js';
 
 const data = [
   {projectName:"Google Project",company:"Google",type:"Data Center",location:"Baton Rouge, LA",timeline:"2026 - 2029",jobs:[{role:"Electricians",count:200},{role:"HVAC",count:100}]},

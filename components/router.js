@@ -1,5 +1,5 @@
-import Home, {onHomeRender} from './Home.js';
-import Email, {onEmailRender} from './Email.js';
+import Home, {onHomeRender} from '../views/home.js';
+import Email, {onEmailRender} from '../views/email.js';
 
 
 // define routes
