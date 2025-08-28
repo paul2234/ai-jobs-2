@@ -83,9 +83,14 @@ button:hover {
 #main {
 	max-width: 800px;
 	margin: 0 auto;
-	padding: 10px;
+	padding: 50px 10px 10px 10px;
 	min-height: 100vh;
 	box-sizing: border-box;
+}
+
+#content p {
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .project-card {

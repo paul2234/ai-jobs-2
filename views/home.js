@@ -21,7 +21,7 @@ function createProjectCard(project) {
 
 export function onHomeRender() {
 	if (window.location.pathname === "/") {
-  		const container = document.getElementById("content");
+  		const container = document.getElementById("projects");
   		data.forEach(project => {
 		  container.appendChild(createProjectCard(project));
 		});
@@ -30,7 +30,7 @@ export function onHomeRender() {
 		  document.getElementById('main').scrollIntoView({ behavior: 'smooth' });
 		});
 
-		document.getElementById('content').addEventListener('click', (e) => {
+		document.getElementById('projects').addEventListener('click', (e) => {
 			e.preventDefault();
 			navigateTo('/email');
 		})
@@ -53,7 +53,10 @@ const Home = () => /*html*/`
 	</div>
 	<div id = "main">
 		<h2>Hello World!</h2>
-		<div id = "content"></div>
+		<div id = "content">
+			<p>Lorem ipsum dolor sit amet.</p>
+			<div id = "projects"></div>
+		</div>
 		<template id = 'project-template'>
 			<div class = 'project-card'>
 				<div class = 'project-header'>
