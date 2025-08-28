@@ -1,6 +1,7 @@
 body, h1, h3, p {
 	margin: 0;
 	padding: 0;
+	font-family: "Open Sans", sans-serif;
 }
 
 #hero {
@@ -70,18 +71,17 @@ body, h1, h3, p {
 
 #seeMore {
 	background-color: white;
-	border: none;
 	border-radius: 999px;
-	padding: 20px;
+	padding: 20px 40px 20px 40px;
 	font-size: 1.15em;
+	display: inline-block;
+	color: black;
+	cursor: pointer;
 }
 
-button:hover {
-	cusror: pointer;
-}
 
 #main {
-	max-width: 800px;
+	max-width: 700px;
 	margin: 0 auto;
 	padding: 50px 10px 10px 10px;
 	min-height: 100vh;
@@ -89,16 +89,19 @@ button:hover {
 }
 
 .content-intro {
-	margin-top: 10px;
-	margin-bottom: 20px;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	padding-top: 40px;
+	padding-bottom: 40px;
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 	font-size: 1.1em;
 }
 
 .project-card {
+
+	cursor: pointer;
+
 	/*shape & border*/
 	border: 1px solid #ccc;
 	padding: 10px;
@@ -109,6 +112,7 @@ button:hover {
 	flex-direction: column;
 	margin-top: 10px;
 	margin-bottom: 10px;
+
 }
 
 .project-header h3 {
@@ -130,9 +134,11 @@ button:hover {
 }
 
 .project-tag {
-	padding: 10px;
+	padding: 10px 20px 10px 20px;
 	background-color: #ccc;
 	border-radius: 999px;
+	display: flex;
+	gap: 5px;
 }
 
 .job-tiles {
@@ -147,6 +153,7 @@ button:hover {
 	
 	/*size and layout*/
 	border-radius: 10px;
+	border: 1px solid #ccc;
 	height: 100px;
 
 	@media only screen and (max-width: 600px) { 
@@ -160,10 +167,14 @@ button:hover {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	
+	flex-direction: column;	
 }
 
-.electrician {
+.role-icon {
+	font-size: 1.3em;
+}
+
+/*.electrician {
 	background-color: #74b9ff;
 	color: #0984e3;
 }
@@ -176,4 +187,4 @@ button:hover {
 .plumbing {
 	background-color: #a29bfe;
 	color: #6c5ce7;
-}
+}*/

@@ -2,8 +2,9 @@
 import {navigateTo} from '../components/router.js';
 
 const data = [
-  {projectName:"Google Project",company:"Google",type:"Data Center",location:"Baton Rouge, LA",timeline:"2026 - 2029",jobs:[{role:"Electricians",count:200},{role:"HVAC",count:100}]},
-  {projectName:"AWS Project",company:"AWS",type:"Data Center & Energy",location:"Richmond, NC",timeline:"2027 - 2030",jobs:[{role:"Electricians",count:100},{role:"HVAC",count:50}]}
+  {projectName:"Google Project",company:"Google",type:"Data Center",location:"Baton Rouge, LA",timeline:"2026 - 2029",jobs:[{role:"Electricians",count:200},{role:"HVAC",count:100},{role:"Plumbing",count:100}]},
+  {projectName:"AWS Project",company:"AWS",type:"Data Center & Energy",location:"Richmond, NC",timeline:"2027 - 2030",jobs:[{role:"Electricians",count:100},{role:"HVAC",count:50},{role:"Plumbing",count:100}]},
+  {projectName:"Microsoft Project",company:"Microsoft",type:"Data Center & Energy",location:"Richmond, VA",timeline:"2027 - 2030",jobs:[{role:"Electricians",count:100},{role:"HVAC",count:50},{role:"Plumbing",count:100}]}
 ];
 
 function createProjectCard(project) {
@@ -12,9 +13,16 @@ function createProjectCard(project) {
 
   card.querySelector(".project-name").textContent += project.projectName;
   card.querySelector('.project-company').textContent = project.company;
-  card.querySelector('.type').textContent = project.type;
-  card.querySelector('.location').textContent = project.location;
-  card.querySelector('.timeline').textContent = project.timeline;
+  card.querySelector('.type').textContent += project.type;
+  card.querySelector('.location .tag-text').textContent = project.location;
+  card.querySelector('.timeline .tag-text').textContent = project.timeline;
+  card.querySelector('.electrician .role-label').textContent = project.jobs[0].role;
+  card.querySelector('.electrician .role-value').textContent = project.jobs[0].count;
+  card.querySelector('.hvac .role-label').textContent = project.jobs[1].role;
+  card.querySelector('.hvac .role-value').textContent = project.jobs[1].count;
+  card.querySelector('.plumbing .role-label').textContent = project.jobs[2].role;
+  card.querySelector('.plumbing .role-value').textContent = project.jobs[2].count;
+  // card.querySelector('.hvac').textContent = project.jobs[1].role;
 
   return card;
 }
@@ -48,14 +56,14 @@ const Home = () => /*html*/`
   	</div>
 		<div id = "hero-content">
 			<h1>Find Skilled Trade Jobs on AI Projects Near You</h1>
-			<button id='seeMore'>See Jobs</button>
+			<div id='seeMore'>See Jobs</div>
 		</div>
 	</div>
 	<div id = "main">
 		<h2>AI Creates over 175,000 Skilled Trade Jobs Each Year.</h2>
 		<h2>Find Yours Here.</h2>
 		<div id = "content">
-			<p class = 'content-intro'>America is in a race to win AI. Winning this race will require massive infrastructure investments. Companies are investing heavily, creating numerous job openings for skilled trades in the process. Find projects near you. Get connected with valuable training resources. Get hired into stable, high-paying jobs. All in one place.</p>
+			<p class = 'content-intro'>America is in a race to win AI. US Companies and the Federal Government have announced over <strong>$1 Trillion</strong> in combined investments into AI Infrastructure. These investments are creating numerous job openings for skilled workers. Find yours today - don't miss out. Find projects near you. Get connected with valuable training resources. Get hired into stable, high-paying jobs. All in one place.</p>
 			<div id = "projects"></div>
 		</div>
 		<template id = 'project-template'>
@@ -66,13 +74,31 @@ const Home = () => /*html*/`
 				</div>
 				<div class = 'project-tags'>
 					<div class ='project-tag type'></div>
-					<div class ='project-tag location'></div>
-					<div class ='project-tag timeline'></div>
+					<div class ='project-tag location'>
+						<div class ='tag-logo'><i class="fa-solid fa-map-location"></i></div>
+						<div class ='tag-text'></div>
+					</div>
+					<div class ='project-tag timeline'>
+						<div class = 'tag-logo'><i class="fa-solid fa-calendar"></i></div>
+						<div class ='tag-text'></div>
+					</div>
 				</div>
 				<div class = 'job-tiles'>
-					<div class = 'job-tile electrician'></div>
-					<div class = 'job-tile hvac'></div>
-					<div class = 'job-tile plumbing'></div>
+					<div class = 'job-tile electrician'>
+						<div class = 'role-icon'><i class="fa-solid fa-bolt"></i></div>
+						<div class='role-label'></div>
+						<div class='role-value'></div>
+					</div>
+					<div class = 'job-tile hvac'>
+						<div class ='role-icon'><i class="fa-solid fa-fire"></i></div>
+						<div class='role-label'></div>
+						<div class='role-value'></div>
+					</div>
+					<div class = 'job-tile plumbing'>
+						<div class='role-icon'><i class="fa-solid fa-faucet"></i></div>
+						<div class='role-label'></div>
+						<div class='role-value'></div>
+					</div>
 				</div>
 			</div>
 		</template>
