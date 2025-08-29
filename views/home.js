@@ -29,7 +29,7 @@ function createProjectCard(project) {
   return card;
 }
 
-async function handleclick(e,sessionId) {
+async function handleclick(e) {
 	e.preventDefault();
 	try {
 		if (supabase) {
@@ -39,7 +39,7 @@ async function handleclick(e,sessionId) {
           created_at: new Date().toISOString(),
           session_id: window.sessionId,
       }
-			// const response = await supabase.from('events').insert(data);
+			const response = await supabase.from('events').insert(data);
 		} else {
 			console.log("Supabase not initialized. No request sent");
 		}
