@@ -1,4 +1,5 @@
 
+import MyComponent from '../components/component.js';
 import {navigateTo} from '../components/router.js';
 import supabase from '../components/supabase.js';
 
@@ -52,7 +53,7 @@ async function handleclick(e) {
 
 }
 
-export function onHomeRender() {
+function onHomeRender() {
 	if (window.location.pathname === "/") {
   		const container = document.getElementById("projects");
   		data.forEach(project => {
@@ -69,7 +70,7 @@ export function onHomeRender() {
   	}
 }
 
-const Home = () => /*html*/`
+const HomeView = () => /*html*/`
   <div id = "hero">
   	<div id = 'hero-nav'>
   		<img src="assets/vf_logo.svg" id='hero-image'>
@@ -129,5 +130,6 @@ const Home = () => /*html*/`
 	</div>
 `;
 
+const Home = new MyComponent(HomeView,onHomeRender);
 export default Home;
 
