@@ -4,8 +4,8 @@ import Email from '../views/email.js';
 
 // define routes
 const routes = {
-	// "/": Home,
-	"/":Email,
+	"/": Home,
+	// "/":Email,
 	"/email": Email
 }
 
