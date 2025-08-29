@@ -5,8 +5,8 @@ import supabase from '../components/supabase.js';
 
 const data = [
   {projectName:"Oracle Stargate",company:"Oracle",type:"Data Center",location:"Abilene, Texas",timeline:"2025 - 2028",jobs:[{role:"Construction",count:900},{role:"Electricians",count:350},{role:"HVAC",count:125}]},
-  {projectName:"AWS Project",company:"AWS",type:"Data Center & Energy",location:"Richmond, NC",timeline:"2027 - 2030",jobs:[{role:"Construction",count:700},{role:"Electricians",count:250},{role:"HVAC",count:100}]},
-  {projectName:"Microsoft Project",company:"Microsoft",type:"Data Center & Energy",location:"Richmond, VA",timeline:"2027 - 2030",jobs:[{role:"Construction",count:800},{role:"Electricians",count:300},{role:"HVAC",count:125}]}
+  {projectName:"Meta Hyperion",company:"Meta / Facebook",type:"Data Center & Energy",location:"Richland Parish, LA",timeline:"2025 - 2030",jobs:[{role:"Construction",count:700},{role:"Electricians",count:250},{role:"HVAC",count:100}]},
+  {projectName:"Meta Prometheus",company:"Meta / Facebook",type:"Data Center & Energy",location:"New Albany, OH",timeline:"2025 - 2027",jobs:[{role:"Construction",count:800},{role:"Electricians",count:300},{role:"HVAC",count:125}]}
 ];
 
 function createProjectCard(project) {
