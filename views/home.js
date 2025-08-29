@@ -59,7 +59,7 @@ function onHomeRender(sessionId) {
 		});
 
 		document.getElementById('seeMore').addEventListener('click', function () {
-		  document.getElementById('main').scrollIntoView({ behavior: 'smooth' });
+		  document.querySelector('.main').scrollIntoView({ behavior: 'smooth' });
 		});
 
 		document.getElementById('projects').addEventListener('click', (e) => {

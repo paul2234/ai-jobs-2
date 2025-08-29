@@ -9,10 +9,17 @@ const onEmailRender = () => {
 	form.addEventListener('submit',async function(event){
 		event.preventDefault();
 
+		// console.log('here');
 		try {
 			const formData = new FormData(form);
 			const email = formData.get('email-input');
-			if (!email || email==="") return;
+			console.log('formData',formData);
+			console.log('email',email);
+			if (!email || email==="") {
+				errorMessage.style.display = 'block';
+				return;
+			};
+
 
 			const data = {
 				email_address:email,
@@ -21,7 +28,7 @@ const onEmailRender = () => {
 				session_id: window.sessionId
 			}
 
-			const {error} = await supabase.from('events').insert(data);	
+			const {error} = await supabase.from('emails').insert(data);	
 			if (error) throw new Error(error);
 
 			// update displays
@@ -38,25 +45,24 @@ const onEmailRender = () => {
 
 
 const EmailView = /*html*/`
-	<div id = "email">
-		<div id="email-hero-nav">
-			<img src="assets/vf_logo.svg" id='hero-image'>
-	  		<div id ='hero-company-name'>
-	  			<p id = 'hero-bold'>Future Jobs</p>
-	  			<p id = 'hero-small'>by Virtus Foundry</p>
-	  		</div>
-	  	</div>
-		<div class = "main">
+		<div id = "email">
+			<div id="email-hero-nav">
+				<img src="assets/vf_logo.svg" id='hero-image'>
+		  		<div id ='hero-company-name'>
+		  			<p id = 'hero-bold'>Future Jobs</p>
+		  			<p id = 'hero-small'>by Virtus Foundry</p>
+		  		</div>
+		  	</div>
 			<h1>Hello! You caught us before we're ready.</h1>
 			<p style="margin-top: 30px">We're working hard to make Future Jobs amazing. Things are going well, and we should be able to connect you with more jobs soon. If you'd like us to send you a reminder when we're ready, just drop your email below."</p>
 			<form id='email-form'>
-				<input type="email" id="email-input" placeholder="email"/>
-				<button id="email-button"></button>
+				<input type="email" id="email-input" name="email-input" placeholder="email"/>
+				<button id="email-button">Submit</button>
 			</form>
 			<div id='email-thank-you'>Thanks! We'll let you know when we're ready.</div>
 			<div id='email-error'>Something went wrong. Please try again.</div>
 		</div>
-	</div>
+	
 `
 
 const Email = new MyComponent(EmailView,onEmailRender);

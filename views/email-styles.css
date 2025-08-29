@@ -1,10 +1,19 @@
 #email {
-	
+	max-width: 700px;
+	margin: 0 auto;
+	position: relative;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100vh;
 }
 
 #email-button {
 	padding: 20px 40px 20px 40px;
-	background-color: blue;
+	background-color: var(--primary-color);
+	color: black;
+	border: none;
 	display: block;
 	border-radius: 999px;
 	margin-top: 20px;
@@ -30,4 +39,14 @@
 	display: flex;
 	align-items: center;
 	padding: 10px;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+#email-input {
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	padding: 10px;
+	min-width: 200px;
 }
