@@ -4,9 +4,9 @@ import {navigateTo} from '../components/router.js';
 import supabase from '../components/supabase.js';
 
 const data = [
-  {projectName:"Google Project",company:"Google",type:"Data Center",location:"Baton Rouge, LA",timeline:"2026 - 2029",jobs:[{role:"Electricians",count:200},{role:"HVAC",count:100},{role:"Plumbing",count:100}]},
-  {projectName:"AWS Project",company:"AWS",type:"Data Center & Energy",location:"Richmond, NC",timeline:"2027 - 2030",jobs:[{role:"Electricians",count:100},{role:"HVAC",count:50},{role:"Plumbing",count:100}]},
-  {projectName:"Microsoft Project",company:"Microsoft",type:"Data Center & Energy",location:"Richmond, VA",timeline:"2027 - 2030",jobs:[{role:"Electricians",count:100},{role:"HVAC",count:50},{role:"Plumbing",count:100}]}
+  {projectName:"Oracle Stargate",company:"Oracle",type:"Data Center",location:"Abilene, Texas",timeline:"2025 - 2028",jobs:[{role:"Construction",count:900},{role:"Electricians",count:350},{role:"HVAC",count:125}]},
+  {projectName:"AWS Project",company:"AWS",type:"Data Center & Energy",location:"Richmond, NC",timeline:"2027 - 2030",jobs:[{role:"Construction",count:700},{role:"Electricians",count:250},{role:"HVAC",count:100}]},
+  {projectName:"Microsoft Project",company:"Microsoft",type:"Data Center & Energy",location:"Richmond, VA",timeline:"2027 - 2030",jobs:[{role:"Construction",count:800},{role:"Electricians",count:300},{role:"HVAC",count:125}]}
 ];
 
 function createProjectCard(project) {
@@ -18,13 +18,12 @@ function createProjectCard(project) {
   card.querySelector('.type').textContent += project.type;
   card.querySelector('.location .tag-text').textContent = project.location;
   card.querySelector('.timeline .tag-text').textContent = project.timeline;
-  card.querySelector('.electrician .role-label').textContent = project.jobs[0].role;
-  card.querySelector('.electrician .role-value').textContent = project.jobs[0].count;
-  card.querySelector('.hvac .role-label').textContent = project.jobs[1].role;
-  card.querySelector('.hvac .role-value').textContent = project.jobs[1].count;
+  card.querySelector('.construction .role-label').textContent = project.jobs[0].role;
+  card.querySelector('.construction .role-value').textContent = project.jobs[0].count;
+  card.querySelector('.electrician .role-label').textContent = project.jobs[1].role;
+  card.querySelector('.electrician .role-value').textContent = project.jobs[1].count;
   card.querySelector('.plumbing .role-label').textContent = project.jobs[2].role;
   card.querySelector('.plumbing .role-value').textContent = project.jobs[2].count;
-  // card.querySelector('.hvac').textContent = project.jobs[1].role;
 
   return card;
 }
@@ -107,18 +106,18 @@ const HomeView = /*html*/`
 					</div>
 				</div>
 				<div class = 'job-tiles'>
+					<div class = 'job-tile construction'>
+						<div class ='role-icon'><i class="fa-solid fa-hammer"></i></div>
+						<div class='role-label'></div>
+						<div class='role-value'></div>
+					</div>
 					<div class = 'job-tile electrician'>
 						<div class = 'role-icon'><i class="fa-solid fa-bolt"></i></div>
 						<div class='role-label'></div>
 						<div class='role-value'></div>
 					</div>
-					<div class = 'job-tile hvac'>
-						<div class ='role-icon'><i class="fa-solid fa-fire"></i></div>
-						<div class='role-label'></div>
-						<div class='role-value'></div>
-					</div>
 					<div class = 'job-tile plumbing'>
-						<div class='role-icon'><i class="fa-solid fa-faucet"></i></div>
+						<div class='role-icon'><i class="fa-solid fa-fire"></i></div>
 						<div class='role-label'></div>
 						<div class='role-value'></div>
 					</div>
