@@ -5,7 +5,7 @@ class MyComponent {
 	}
 
 	view() {
-		this.viewFn();
+		return this.viewFn;
 	}
 
 	onRender() {

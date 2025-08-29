@@ -7,4 +7,27 @@
 	background-color: blue;
 	display: block;
 	border-radius: 999px;
+	margin-top: 20px;
+}
+
+#email-form {
+	margin-top: 20px;
+}
+
+#email-thank-you {
+	margin-top: 20px;
+	display: none;
+}
+
+#email-error {
+	margin-top: 20px;
+	font-weight: bold;
+	color: red;
+	display: none;
+}
+
+#email-hero-nav{
+	display: flex;
+	align-items: center;
+	padding: 10px;
 }

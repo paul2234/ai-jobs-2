@@ -29,17 +29,15 @@ function createProjectCard(project) {
   return card;
 }
 
-async function handleclick(e) {
+async function handleclick(e,sessionId) {
 	e.preventDefault();
-	
 	try {
 		if (supabase) {
-			const sessionId = Math.floor(Math.random() * 2147483647);
 			const data = {
           project: 'ai_jobs',
           event_description: 'clicked_see_more',
           created_at: new Date().toISOString(),
-          session_id: sessionId,
+          session_id: window.sessionId,
       }
 			// const response = await supabase.from('events').insert(data);
 		} else {
@@ -53,7 +51,7 @@ async function handleclick(e) {
 
 }
 
-function onHomeRender() {
+function onHomeRender(sessionId) {
 	if (window.location.pathname === "/") {
   		const container = document.getElementById("projects");
   		data.forEach(project => {
@@ -65,12 +63,12 @@ function onHomeRender() {
 		});
 
 		document.getElementById('projects').addEventListener('click', (e) => {
-				handleclick(e);
+				handleclick(e,sessionId);
 			})
   	}
 }
 
-const HomeView = () => /*html*/`
+const HomeView = /*html*/`
   <div id = "hero">
   	<div id = 'hero-nav'>
   		<img src="assets/vf_logo.svg" id='hero-image'>
@@ -84,7 +82,7 @@ const HomeView = () => /*html*/`
 			<div id='seeMore'>See Jobs</div>
 		</div>
 	</div>
-	<div id = "main">
+	<div class = "main">
 		<h2>AI Creates over 175,000 Skilled Trade Jobs Each Year.</h2>
 		<h2>Find Yours Here.</h2>
 		<div id = "content">
