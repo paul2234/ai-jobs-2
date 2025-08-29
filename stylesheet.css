@@ -178,3 +178,13 @@ body, h1, h3, p {
 .role-icon {
 	font-size: 1.3em;
 }
+
+footer {
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	font-size: 0.8em;
+
+}
